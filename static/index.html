@@ -132,7 +132,7 @@
         peerConnection = new webkitRTCPeerConnection(config, connection);
         peerConnection.onicecandidate = function(e){
             if (!peerConnection || !e || !e.candidate) return;
-            var candidate = event.candidate;
+            var candidate = e.candidate;
             sendNegotiation("candidate", candidate);
         }
 
